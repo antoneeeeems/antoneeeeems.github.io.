@@ -1,0 +1,17 @@
+v1.0 – Initial homepage created
+
+v1.1 – Shopping page added
+
+v1.2 – Switched styling to Tailwind CSS
+
+v1.3 – Implemented "Add to Cart" functionality
+
+v1.4 – Updated "Add to Cart" feature to use a popup style
+
+v1.5 – Created login and sign-up pages
+
+v1.6 – Integrated front-end login system; username now displays on the homepage upon login
+
+v1.7 – Enhanced sign-up system to display a dynamic alert with the user's name upon successful account creation and redirect to the login page
+
+v1.8 – Implemented localStorage for the front-end login and signup system. User data is stored securely in localStorage, and login credentials are validated against it

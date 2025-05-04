@@ -1,0 +1,90 @@
+<!-- background overlay -->
+<div id="background-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+
+<!-- add to cart popup notif -->
+<div id="cart-notification" class="fixed top-28 right-8 bg-white border border-gray-200 text-gray-800 px-4 py-3 rounded shadow-lg z-[60] hidden flex items-center gap-3">
+    <img id="notification-image" src="" alt="Book Cover" class="w-12 h-16 object-cover rounded">
+    <span id="notification-text">Item added to cart!</span>
+</div>
+
+<!-- cart overlay -->
+<div id="cart-overlay" class="fixed inset-y-0 right-0 w-1/2 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col">
+    <!-- cart header -->
+    <div class="flex justify-between items-center p-6 border-b">
+        <h2 class="text-2xl font-bold">Cart Updated</h2>
+        <div class="flex gap-4">
+            <button id="continue-shopping-header" class="px-4 py-2 bg-black text-white rounded text-sm font-medium hover:bg-gray-800">Continue Shopping</button>
+            <button class="px-4 py-2 bg-secondary text-white rounded text-sm font-medium hover:bg-purple-300">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- cart items -->
+    <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-6">
+        <!-- cart items inserted here -->
+        <p class="text-center text-gray-500">Your cart is empty.</p>
+    </div>
+
+    <!-- cart footer -->
+    <div class="p-6 border-t">
+
+        <!-- coupon code -->
+        <div class="flex justify-between items-center mb-4">
+            <label for="coupon-code" class="text-sm font-medium">Coupon Code</label>
+            <input type="text" id="coupon-code" placeholder="Enter coupon code" class="border rounded px-2 py-1 w-1/2 text-sm">
+        </div>
+        
+        <!-- item count -->
+        <div class="flex justify-start items-center mb-4 text-sm border-t pt-4">
+            <span id="cart-item-count" class="font-medium">0 Items</span>
+        </div>
+
+        <!-- summary -->
+        <div class="space-y-2 text-sm mb-4">
+            <div class="flex justify-between">
+                <span class="text-gray-600">Subtotal</span>
+                <span id="cart-subtotal" class="font-medium">₱ 0.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Shipping</span>
+                <span class="font-medium">₱ 0.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Discounts & Coupons</span>
+                <span id="cart-discounts" class="font-medium">₱ 0.00</span>
+            </div>
+            <div class="flex justify-between font-semibold text-base border-t pt-2 mt-2">
+                <span>Total</span>
+                <span id="cart-total">₱ 0.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="cart-item-template">
+    <div class="cart-item flex items-center gap-4 py-6 border-b min-h-[140px]">
+        <img class="w-[90px] h-[120px] object-cover" src="" alt="">
+        <div class="flex-grow flex items-center justify-between h-[120px]">
+            <div class="h-full flex flex-col justify-center">
+                <p class="text-gray-600 mb-1"></p>
+                <h3 class="font-medium"></h3>
+            </div>
+            <div class="flex items-center gap-8 h-full">
+                <div class="flex items-center gap-4">
+                    <button class="text-lg w-4 text-center" onclick="updateQuantity(this.closest('.cart-item').dataset.id, parseInt(this.nextElementSibling.value) - 1)">-</button>
+                    <input type="text" class="w-8 text-center border-none" value="1" readonly>
+                    <button class="text-lg w-4 text-center" onclick="updateQuantity(this.closest('.cart-item').dataset.id, parseInt(this.previousElementSibling.value) + 1)">+</button>
+                </div>
+                <div class="flex flex-col items-end justify-center h-full">
+                    <div class="font-medium text-lg whitespace-nowrap min-h-[28px]"></div>
+                    <div class="text-sm text-gray-500 line-through whitespace-nowrap min-h-[20px]"></div>
+                    <button class="flex items-center gap-1 text-red-500 hover:text-red-600 mt-2" onclick="updateQuantity(this.closest('.cart-item').dataset.id, 0)">
+                        <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                            <path stroke-width="1.2" d="M2 3.5h10M10.5 3.5v8.5H3.5v-8.5M4.5 3.5v-2h5v2"/>
+                        </svg>
+                        Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template> 

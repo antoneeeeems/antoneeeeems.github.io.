@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narra Bookstore - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#431F41',
+                        secondary: '#C08ACF',
+                        accent: '#7469B6',
+                        dark: '#2D336B',
+                        light: '#E2E0C8',
+                        'text-muted': '#431F4180'
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        .price span {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="font-outfit">
+    <div class="flex justify-center w-full">
+        <div class="w-[1920px] bg-white flex flex-col min-h-screen">
+            <!-- header -->
+            <header class="w-full mt-[7px]">
+                <!-- top header (logo, search, user nav) -->
+                <div class="h-[120px] flex items-center justify-between px-[50px]">
+                    <!-- logo -->
+                    <a href="homepage.html" class="flex items-center">
+                        <img class="w-[100px] h-[101px]" src="images/narra-logo.png" alt="Narra logo" />
+                        <div class="font-bold text-[64px] leading-[120px] text-primary whitespace-nowrap ml-[10px]">narra</div>
+                    </a>
+
+                    <!-- search -->
+                    <div class="w-[597px]">
+                        <div class="relative h-[45px] rounded-[5px] flex items-center border border-black">
+                            <input type="text" placeholder="Search" class="w-full h-full px-4 text-[20px] leading-[20px] text-text-muted bg-transparent outline-none" />
+                            <img class="w-6 h-6 mr-3" src="images/search-logo.png" alt="Search" />
+                        </div>
+                    </div>
+
+                    <!-- user navigation -->
+                    <div class="flex items-center gap-[40px]">
+                        <a href="login.html" class="flex items-center gap-2">
+                            <div class="text-[24px] leading-[20px] text-primary whitespace-nowrap">Sign In</div>
+                            <img class="w-6 h-6" src="images/sign-in.png" alt="Sign in" />
+                        </a>
+                        <a href="#" class="flex items-center gap-2">
+                            <div class="text-[24px] leading-[20px] text-primary whitespace-nowrap">Wishlist</div>
+                            <img class="w-6 h-6" src="images/wishlist.png" alt="Wishlist" />
+                        </a>
+                        <a href="#" class="flex items-center gap-2 cursor-pointer" id="cart-toggle">
+                            <div class="text-[24px] leading-[20px] text-primary whitespace-nowrap">Cart</div>
+                            <img class="w-6 h-6" src="images/cart.png" alt="Cart" />
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- store nav -->
+                <nav class="w-full h-[77px] bg-primary flex justify-center items-center gap-[200px]">
+                    <a href="shop.html" class="font-medium text-[36px] leading-[40px] text-white whitespace-nowrap">books</a>
+                    <a href="shop.html" class="font-medium text-[36px] leading-[40px] text-white whitespace-nowrap">non-books</a>
+                    <a href="shop.html" class="font-medium text-[36px] leading-[40px] text-white whitespace-nowrap">featured</a>
+                    <a href="shop.html" class="font-medium text-[36px] leading-[40px] text-white whitespace-nowrap">sale</a>
+                </nav>
+            </header>
+
+            <!-- main content -->
+            <main class="flex-grow">
+                <!-- hero -->
+                <section class="w-[1823px] h-[588px] mx-auto mt-[25px] mb-[33px] flex flex-row gap-[40px]">
+                    <!-- hero left -->
+                    <div class="w-[891px] h-full bg-secondary rounded-[37.7px] relative">
+                        <img class="absolute bottom-0 right-0 w-[629px] h-[381px] z-10" src="images/bookstack.png" alt="Book stack" />
+                        <div class="absolute font-bold text-[108px] leading-[120px] text-white mt-2 ml-[33px] z-20">A Fresh Chapter<br />Awaits</div>
+                    </div>
+                    <!-- hero right -->
+                    <div class="w-[892px] h-full bg-primary rounded-[37.7px] flex flex-col justify-end relative">
+                        <div class="font-bold text-[96px] leading-[120px] text-white mb-2 ml-[33px]">Daily<br />Hot Picks</div>
+                        <div class="absolute w-[120px] h-[120px] top-[40px] right-[44px] bg-white rounded-[18px] flex items-center justify-center">
+                            <img class="w-[80px] h-[80px]" src="images/top-right-arrow.png" alt="View hot picks" />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- featured -->
+                <section class="w-[1823px] mx-auto mt-[33px] mb-[33px]">
+                    <div class="flex flex-row justify-between items-start">
+                        <div>
+                            <div class="font-black text-[65px] leading-[120px] text-primary whitespace-nowrap">New Stories, Timeless Adventures</div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-light text-[24px] leading-[30px] text-[#1e1e1e] mt-8">Turn the page to something new—bestsellers,<br />classics, and unforgettable stories await</p>
+                        </div>
+                    </div>
+                    <div class="relative w-full h-[535px] mt-[20px]">
+                        <div class="absolute inset-x-[-39px] h-full flex items-center justify-center gap-[45px]">
+                            <div class="carousel-item">
+                                <img src="images/the-will-of-the-many.png" alt="The Will of the Many" class="w-[374px] h-[535px] mt-[10px] object-cover">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/crime-and-punishment.png" alt="Crime and Punishment" class="w-[374px] h-[535px] mt-[10px] object-cover">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/project-hail-mary.png" alt="Project Hail Mary" class="w-[374px] h-[535px] mt-[10px] object-cover">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/the-sword-of-kaigen.png" alt="The Sword of Kaigen" class="w-[374px] h-[535px] mt-[10px] object-cover">
+                            </div>
+                            <img class="absolute left-[30px] top-1/2 -translate-y-1/2 w-[80px] h-[80px] flex-shrink-0 cursor-pointer" src="images/left-arrow.png" alt="Previous" />
+                            <img class="absolute right-[30px] top-1/2 -translate-y-1/2 w-[80px] h-[80px] flex-shrink-0 cursor-pointer" src="images/right-arrow.png" alt="Next" />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- categories -->
+                <section class="w-[1670px] mx-auto mt-[4px] mb-[81px] flex flex-col items-center">
+                    <h2 class="font-black text-[65px] leading-[120px] text-primary whitespace-nowrap mb-5">Most Popular Categories</h2>
+                    <div class="flex justify-between w-full h-[588px]">
+                        <a href="shop.html" class="relative w-[375px] h-[588px]">
+                            <img class="w-[373px] h-[535px] object-cover" src="images/collage-1.png" alt="Fiction category" />
+                            <h3 class="absolute font-semibold text-[32px] leading-[40px] text-primary whitespace-nowrap bottom-[7px] text-center w-full left-0">Fiction</h3>
+                        </a>
+                        <a href="shop.html" class="relative w-[375px] h-[588px]">
+                            <img class="w-[373px] h-[535px] object-cover" src="images/collage-2.png" alt="Romance category" />
+                            <h3 class="absolute font-semibold text-[32px] leading-[40px] text-primary whitespace-nowrap bottom-[7px] text-center w-full left-0">Romance</h3>
+                        </a>
+                        <a href="shop.html" class="relative w-[375px] h-[588px]">
+                            <img class="w-[373px] h-[535px] object-cover" src="images/collage-3.png" alt="Mystery category" />
+                            <h3 class="absolute font-semibold text-[32px] leading-[40px] text-primary whitespace-nowrap bottom-[7px] text-center w-full left-0">Mystery</h3>
+                        </a>
+                        <a href="shop.html" class="relative w-[375px] h-[588px]">
+                            <img class="w-[373px] h-[535px] object-cover" src="images/collage-4.png" alt="Manga category" />
+                            <h3 class="absolute font-semibold text-[32px] leading-[40px] text-primary whitespace-nowrap bottom-[7px] text-center w-full left-0">Manga</h3>
+                        </a>
+                    </div>
+                </section>
+            </main>
+
+            <!-- footer -->
+            <footer class="w-full h-[380px] bg-primary flex px-[260px] py-[40px] justify-between mt-auto">
+                <!-- brand -->
+                <div class="w-[272px] h-[179px]">
+                    <div class="flex items-center w-[272px] h-[120px] mb-[14px]">
+                        <img class="w-[100px] h-[101px]" src="images/narra-logo.png" alt="Narra logo" />
+                        <div class="font-bold text-[64px] leading-[120px] text-white whitespace-nowrap ml-[10px]">narra</div>
+                    </div>
+                    <p class="w-[258px] text-[16px] leading-[30px] text-white ml-[14px] mb-[14px]">
+                        For inquiries/concerns get in touch with us at
+                    </p>
+                    <div class="flex items-center ml-[14px]">
+                        <img class="w-[28px] h-[28px] mr-2" src="images/email.png" alt="Mail icon" />
+                        <div class="text-[20px] leading-[30px] text-white whitespace-nowrap">
+                            support@tonenarrabookstore.com
+                        </div>
+                    </div>
+                </div>
+
+                <!-- company links -->
+                <div class="flex flex-col gap-[10px]">
+                    <h3 class="font-medium text-[24px] leading-[30px] text-white whitespace-nowrap mb-5">COMPANY</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">About us</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Blog</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Careers</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Events</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Featured Authors</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">narra Foundation</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Store locator</a></li>
+                    </ul>
+                </div>
+
+                <!-- service links -->
+                <div class="flex flex-col gap-[10px]">
+                    <h3 class="font-medium text-[24px] leading-[30px] text-white whitespace-nowrap mb-5">SERVICE</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Contact us</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Direct Sales</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Discount Cards</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">FAQs</a></li>
+                        <li><a href="#" class="text-[16px] leading-[30px] text-white">Privacy and Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- social media links -->
+                <div class="flex flex-col gap-[10px]">
+                    <h3 class="font-medium text-[24px] leading-[30px] text-white whitespace-nowrap mb-5">SOCIAL MEDIA</h3>
+                    <ul class="space-y-5">
+                        <li>
+                            <a href="https://www.facebook.com" class="flex items-center">
+                                <img class="w-[23px] h-[23px] mr-[17px]" src="images/facebook.png" alt="Facebook" />
+                                <span class="text-[16px] leading-normal tracking-[0.16px] text-white">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com" class="flex items-center">
+                                <img class="w-[23px] h-[23px] mr-[17px]" src="images/instagram.png" alt="Instagram" />
+                                <span class="text-[16px] leading-normal tracking-[0.16px] text-white">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com" class="flex items-center">
+                                <img class="w-[23px] h-[23px] mr-[17px]" src="images/youtube.png" alt="YouTube" />
+                                <span class="text-[16px] leading-normal tracking-[0.16px] text-white">Youtube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com" class="flex items-center">
+                                <img class="w-[23px] h-[23px] mr-[17px]" src="images/twitter.png" alt="Twitter" />
+                                <span class="text-[16px] leading-normal tracking-[0.16px] text-white">Twitter</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="cart.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (loggedInUser) {
+                const user = JSON.parse(loggedInUser); // parse the json string into an object
+                const signInLink = document.querySelector("a[href='login.html']");
+                const userIcon = signInLink.querySelector("img");
+                signInLink.textContent = user.name; // display username
+                signInLink.appendChild(userIcon); // move the user icon to the right of the name
+                signInLink.href = "#"; // link placeholder
+                signInLink.classList.add("flex", "items-center", "gap-2", "text-[24px]", "leading-[20px]", "text-primary", "whitespace-nowrap"); // ensure consistent styling
+            }
+        });
+    </script>
+</body>
+</html>
