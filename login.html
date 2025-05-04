@@ -39,7 +39,7 @@
             if (user) {
                 localStorage.setItem("loggedInUser", JSON.stringify(user));
                 alert(`Welcome back, ${user.name}!`);
-                window.location.href = "homepage.html";
+                window.location.href = "index.html";
             } else {
                 alert("Invalid email or password.");
             }
@@ -54,7 +54,7 @@
                 <!-- top header (logo, search, user nav) -->
                 <div class="h-[120px] flex items-center justify-between px-[50px]">
                     <!-- Logo -->
-                    <a href="homepage.html" class="flex items-center">
+                    <a href="index.html" class="flex items-center">
                         <img class="w-[100px] h-[101px]" src="images/narra-logo.png" alt="Narra logo" />
                         <div class="font-bold text-[64px] leading-[120px] text-primary whitespace-nowrap ml-[10px]">narra</div>
                     </a>
